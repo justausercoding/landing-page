@@ -2,11 +2,11 @@
 Block:
     card
 
-Element: (when going into elements)
+Element:
     card__text
     card__image
 
-Modifiers (modifies original css / modification to a block) 
+Modifiers (modifies original css / modification to a block):
     card--black
 
 try to not nest - each element should have own class
@@ -15,13 +15,15 @@ try to not nest - each element should have own class
 
 :root {
     /* colors bg */
-    --color-bg-dark: #1F2937; /* header, hero, footer */
+    --color-bg-dark: #1F2937;
     --color-bg-light: #FFF;
     --color-bg-grey: #E5E7EB;
     /* colors fg */
-    --color-fg-light-pri: #F9FAF8;  /* hero main text, header logo */
-    --color-fg-light-sec: #E5E7EB; /* hero secondary, header links */
-    --color-fg-dark: #1F2937;
+    --color-fg-light-pri: #F9FAF8;
+    --color-fg-light-sec: #E5E7EB;
+    --color-fg-dark-pri: #1F2937;
+    --color-fg-dark-sec: #54595f;
+
     /* other colors */
     --color-action: #3882F6;
     --color-image-placeholder: #6D747D;
@@ -147,7 +149,6 @@ body {
     margin: 10px 0 0 0;
 }
 
-
 /* INFO */
 .info {
     background: var(--color-bg-light);
@@ -155,11 +156,67 @@ body {
     padding: var(--padding-content);
     /* as flex parent */
     display: flex;
+    justify-content: center;
+}
+
+.info__box {
+    /* as flex child */
+    flex-basis: var(--width-content);
+    /* as flex parent */
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.info__box__title {
+    padding-top: 16px;
+    /* as flex child */
+    flex: 1;
+    /* as flex parent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+
+.info__box__sect {
+    padding: 20px 50px;
+    /* as flex child */
+    flex: 3;
+    /* as flex parent */
+    display: flex;
+    gap: 30px;
+}
+
+
+.info__box__title h2 {
+    color: var(--color-fg-dark-pri);
+    font-size: 36px;
+    font-weight: 900;
+
+}
+
+
+.card {
+    /* as flex parent */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.card__border {
+    flex-basis: 130px;
+    border: 3px solid var(--color-action);
+    border-radius: 15px;
+}
+
+.card__text {
+    text-align: center;
+    font-size: 17px;
+    color: var(--color-fg-dark-sec);
+
+}
 
 /* QUOTE */
 .quote {
