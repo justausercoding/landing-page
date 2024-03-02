@@ -1,0 +1,182 @@
+/* BEM naming convention
+Block:
+    card
+
+Element: (when going into elements)
+    card__text
+    card__image
+
+Modifiers (modifies original css / modification to a block) 
+    card--black
+
+try to not nest - each element should have own class
+*/
+
+
+:root {
+    /* colors bg */
+    --color-bg-dark: #1F2937; /* header, hero, footer */
+    --color-bg-light: #FFF;
+    --color-bg-grey: #E5E7EB;
+    /* colors fg */
+    --color-fg-light-pri: #F9FAF8;  /* hero main text, header logo */
+    --color-fg-light-sec: #E5E7EB; /* hero secondary, header links */
+    --color-fg-dark: #1F2937;
+    /* other colors */
+    --color-action: #3882F6;
+    --color-image-placeholder: #6D747D;
+    
+    /* width of shown content */
+    --width-content: 800px;
+    --padding-content: 0px 8px 0px 8px;
+}
+
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Roboto;
+}
+
+
+/* HEADER */
+.header {
+    background: var(--color-bg-dark);
+    height: 50px;
+    padding: var(--padding-content);
+    /* as flex parent: */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.header__box {
+    /* as flex child */
+    flex-basis: var(--width-content);
+    /* as flex parent: */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header__box__logo {
+    color: var(--color-fg-light-pri);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.header__box__list {
+    list-style-type: none;
+    margin: 0;
+    /* as flex parent */
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+}
+
+.header__box__list li a {
+    text-decoration: none;
+    color: var(--color-fg-light-sec);
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* HERO */
+.hero {
+    background: var(--color-bg-dark);
+    height: 470px;
+    padding: var(--padding-content);
+    /* as flex parent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__box {
+    /* as flex child */
+    flex-basis: var(--width-content);
+    /* as flex parent */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.hero__box__text {
+    flex: 1;
+}
+
+.hero__box__image {
+    flex: 1;
+    background: var(--color-image-placeholder);
+    color: var(--color-fg-light-sec);
+    /* as flex child */
+    align-self: stretch;
+
+    /* as flex parent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero__box__text h1 {
+    color: var(--color-fg-light-pri);
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hero__box__text h3 {
+    color: var(--color-fg-light-sec);
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.hero__box__text button {
+    background-color: var(--color-action);
+    color: var(--color-fg-light-pri);
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin: 10px 0 0 0;
+}
+
+
+/* INFO */
+.info {
+    background: var(--color-bg-light);
+    height: 470px;
+    padding: var(--padding-content);
+    /* as flex parent */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* QUOTE */
+.quote {
+    background: gray;
+    height: 400px;
+}
+
+
+/* SIGNUP */
+.signup {
+    background: magenta;
+    height: 300px;
+}
+
+
+/* FOOTER */
+.footer {
+    background: blue;
+    height: 70px;
+}
