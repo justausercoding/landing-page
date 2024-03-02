@@ -33,7 +33,7 @@ Try to nest as little as possible, each element should have its own class
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: Roboto;
+    font-family: Roboto, Arial, sans-serif
 }
 
 /* HEADER */
